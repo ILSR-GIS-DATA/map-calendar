@@ -1,0 +1,17 @@
+---
+title: "November 2026"
+subtitle: "Maps created by Christine Parker, PhD | Institute for Local Self-Reliance"
+title-block-banner: false
+listing:
+  id: calendar
+  contents: posts
+  type: custom
+  template: calendar.ejs.md
+  sort: "date asc"
+  date-format: iso
+  max-items: 100
+  categories: false
+---
+
+::: {#calendar}
+:::

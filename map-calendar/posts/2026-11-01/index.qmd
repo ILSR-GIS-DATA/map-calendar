@@ -1,0 +1,10 @@
+---
+title: "Points"
+date: 2026-11-01
+image: mn_thumbnail.svg
+---
+
+[Back to the calendar](../../index.qmd)
+
+![Community Networks of Minnesota](MinnesotaCommunityNetworks.svg){.post-map}
+This map represents communities that own and/or operate infrastructure that supports Internet access within the community.
