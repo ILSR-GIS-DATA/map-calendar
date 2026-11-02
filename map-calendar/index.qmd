@@ -1,6 +1,6 @@
 ---
 title: "November 2026"
-subtitle: "Maps created by Christine Parker, PhD | Institute for Local Self-Reliance"
+subtitle: "Casual map entries for the 2026 30 Day Map Challenge"
 title-block-banner: false
 listing:
   id: calendar
@@ -12,6 +12,10 @@ listing:
   max-items: 100
   categories: false
 ---
+
+*Maps created by Christine Parker, PhD \| Institute for Local Self-Reliance*
+
+*[Challenge website](https://30daymapchallenge.com/)*
 
 ::: {#calendar}
 :::
