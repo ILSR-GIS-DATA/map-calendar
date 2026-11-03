@@ -8,4 +8,4 @@ image: AllCooperativeFiber.svg
 
 ![Cooperative Fiber Networks](AllCooperativeFiber.svg){.post-map}
 This map shows where cooperative utility providers offer 
-fiber Internet access. 
+fiber Internet access.The mapped polygons are census blocks, from the FCC's Broadband Data Collection (BDC), that indicate where Internet service providers claim to be able to provide service. The BDC has known issues, some of which stem from the self-reported nature of the data describing provider service areas. However, it remains the only publicly available dataset that describes Internet availability at the location level.  
