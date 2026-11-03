@@ -15,7 +15,7 @@ listing:
 
 *Maps created by Christine Parker, PhD \| Institute for Local Self-Reliance*
 
-*[Challenge website](https://30daymapchallenge.com/)*
+[*Challenge website*](https://30daymapchallenge.com/)
 
 ::: {#calendar}
 :::

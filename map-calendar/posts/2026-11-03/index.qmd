@@ -1,0 +1,11 @@
+---
+title: "Polygons"
+date: 2026-11-03
+image: AllCooperativeFiber.svg
+---
+
+[Back to the calendar](../../index.qmd)
+
+![Cooperative Fiber Networks](AllCooperativeFiber.svg){.post-map}
+This map shows where cooperative utility providers offer 
+fiber Internet access. 
