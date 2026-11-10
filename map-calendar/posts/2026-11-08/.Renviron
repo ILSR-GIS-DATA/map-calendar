@@ -1,0 +1,7 @@
+db_password=ilsrcbn21
+dbname=ilsr_cbn
+ss_sheet=https://docs.google.com/spreadsheets/d/1w5oD7b6y_1EunTPr8-FjeAhm97feWP1M415j5xexcjk/edit?usp=sharing
+muni_dissolve=C:/Users/chris/ILSR Dropbox/Christine Parker/Christine Parker/Projects/Maps/CO-OP_PredictionMap/predictive_map_d23.gdb/muni_data_dissolve_d23EA
+carto_key=cb1_2h1o_1_ac4f6a1f67f7a54987f0abee
+carto_url=https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png?key=cb1_2h1o_1_ac4f6a1f67f7a54987f0abee
+CENSUS_API_KEY=a12010deea8987ecd6704fa339643152214292f5

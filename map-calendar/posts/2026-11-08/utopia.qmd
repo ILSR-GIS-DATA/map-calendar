@@ -1,0 +1,114 @@
+---
+title: "utopia"
+author: "Christine Parker"
+format: html
+editor: visual
+---
+
+```{r settings, include=FALSE}
+#| message: false
+library(tidyverse)
+library(httr2)
+library(sf)
+library(leaflet)
+library(gt)
+library(DBI)
+library(RPostgres) #enables R to access postgres database
+library(bslib)
+library(bsicons)
+library(googlesheets4) #enables R ro read/write to google sheets
+library(janitor)
+library(tidycensus)
+library(leaflet.providers)
+library(tigris)
+library(leaflet.minicharts)
+library(htmltools)
+library(duckdb)
+library(ggplot2)
+library(ggwaffle)
+library(showtext)
+library(cowplot)
+library(scales)
+library(plotly)
+library(htmltools)
+library(htmlwidgets)
+library(reactable)
+library(rmapshaper)
+font_add_google("Roboto", "roboto")
+showtext_auto()
+readRenviron(".Renviron")
+#census_api_key(census_api_key, install = TRUE, overwrite = )
+Sys.getenv("CENSUS_API_KEY")
+options(scipen = 999)
+```
+
+
+```{r load data from PG, echo=FALSE, include=FALSE}
+
+ #drv <- RPostgres::dbDriver("PostgreSQL") 
+con <-  RPostgres::dbConnect(drv = Postgres(), user = "postgres", 
+                             password = Sys.getenv("db_password"), 
+                             dbname = Sys.getenv("dbname"), port = "5433") 
+
+utopia_bl <- dbGetQuery(con, "SELECT DISTINCT
+                      block_id
+                    FROM raw_fcc.bdc_avail_d25_ut
+                    WHERE provider_id = '230051';")
+
+cnty_fips = str_sub(utopia_bl$block_id, 3, 5) %>% unique()
+
+ut_bl <- blocks(state = "UT",county = cnty_fips, year = 2024)
+
+utopia_geo <- ut_bl %>% inner_join(y = utopia_bl, by = c("GEOID20" = "block_id") ) %>% st_transform(4326)
+
+ut_counties <- counties(state = "UT", cb=FALSE, year = 2024)
+
+```
+
+```{r map utopia}
+
+#95A300
+
+
+
+map_utopia <- ggplot() +
+  geom_sf(data = ut_counties, fill = "#284049", color = "white", linewidth = 0.05, alpha = .9) +
+  geom_sf(data = utopia_geo, fill = "#95A300", color = NA)  +
+  labs(
+    title    = "UTOPIA",
+    subtitle = "Utah Telecommunication\nOpen Infrastructure Agency",
+    caption  = "Data: FCC Broadband Data Collection (as of Dec 2025)"
+  ) +
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "#F8FAFC", color = NA),
+    plot.title      = element_text(size = 42, 
+                                   face = "bold", 
+                                   hjust = 0.5,
+                                   color = "#95A300",
+                                   margin = margin(b = 7)),
+    plot.subtitle   = element_text(size = 38, 
+                                   face = "bold", 
+                                   color = "#111827",
+                                   margin = margin(b = 1),
+                                   hjust = 0.5,
+                                   lineheight = .5),
+    plot.caption    = element_text(size = 18, 
+                                   color = "#9CA3AF",
+                                   margin = margin(t = 5),
+                                   hjust = .25),
+    plot.title.position   = "plot",
+    plot.caption.position = "plot",
+    plot.margin = margin(20, 50, 20, 50)
+  )
+
+map_utopia
+
+```
+
+```{r save and export image}
+
+
+ggsave("utopia_d25.png", map_utopia,  dpi = 150, bg = "#F8FAFC", device = ragg::agg_png)
+
+```

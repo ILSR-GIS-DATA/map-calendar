@@ -1,0 +1,9 @@
+---
+title: "Utopia"
+date: 2026-11-08
+image: utopia-logo-1.svg
+---
+
+[Back to the calendar](../../index.qmd)
+
+![UTOPIA](utopia_d25.png){.post-map} Nothing fancy about this map...unless you consider that the service area of UTOPIA is entirely fiber-based, owned by the communities where it operates, AND supports a competitive market by providing an open-access infrastructure! You can learn more about UTOPIA [here](https://www.utopiafiber.com/).
